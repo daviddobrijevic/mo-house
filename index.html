@@ -148,7 +148,9 @@
     position:absolute;left:20px;bottom:20px;background:rgba(255,255,255,.94);
     border-radius:var(--radius-sm);padding:12px 18px;box-shadow:var(--shadow-sm);
     font-size:.9rem;font-weight:500;display:flex;align-items:center;gap:.5em;
+    cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s var(--ease);
   }
+  .about-badge:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
   .about-badge svg{width:20px;height:20px;color:var(--green)}
 
   /* Podaci - grid ikonica */
@@ -318,10 +320,10 @@
     </div>
     <div class="about-media reveal">
       <img src="images/photo-11.jpg" loading="lazy" alt="" data-i18n-alt="alt_pool_view" />
-      <div class="about-badge">
+      <a href="#lokacija" class="about-badge" aria-label="Lokacija i dolazak">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
         <span data-i18n="about_badge">Alibegovac · Fruška gora</span>
-      </div>
+      </a>
     </div>
   </div>
 </section>
