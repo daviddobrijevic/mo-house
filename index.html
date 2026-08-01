@@ -181,10 +181,11 @@
   .poolbar .pb-num span{font-size:.78rem;opacity:.85;text-transform:uppercase;letter-spacing:.08em}
 
   /* ===================== GALERIJA ===================== */
-  /* masonry - uvek lepo popunjeno, bez rupa */
-  .gallery{columns:3;column-gap:14px;margin-top:44px}
-  .gallery figure{margin:0 0 14px;position:relative;overflow:hidden;border-radius:var(--radius-sm);cursor:pointer;background:#eee;break-inside:avoid;-webkit-column-break-inside:avoid}
-  .gallery img{width:100%;height:auto;display:block;transition:transform .8s var(--ease)}
+  /* uniformni grid - popunjava pun pravougaonik, bez praznina */
+  .gallery{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:230px;grid-auto-flow:dense;gap:14px;margin-top:44px}
+  .gallery figure{margin:0;position:relative;overflow:hidden;border-radius:var(--radius-sm);cursor:pointer;background:#eee}
+  .gallery .wide{grid-column:span 2}
+  .gallery img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s var(--ease)}
   .gallery figure:hover img{transform:scale(1.06)}
   .gallery figure::after{
     content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.28));
@@ -258,13 +259,13 @@
     .about,.location{grid-template-columns:1fr}
     .about-media{order:-1}
     .facts{grid-template-columns:repeat(2,1fr)}
-    .gallery{columns:2}
+    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
     .know-grid{grid-template-columns:1fr}
     .poolbar{flex-direction:column;align-items:flex-start}
   }
   @media(max-width:560px){
     .facts{grid-template-columns:1fr 1fr}
-    .gallery{columns:2}
+    .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:160px}
     .lb-prev{left:10px}.lb-next{right:10px}
     .hero-cta .btn{flex:1;justify-content:center}
   }
@@ -502,7 +503,8 @@ const FACTS = [
 /* Galerija - redosled i veličina pločica.
    size: "" normalno · "g-wide" široko · "g-tall" visoko */
 const GALLERY = [
-  { src:"images/photo-11.jpg", size:"g-wide", altSr:"Bazen sa panoramskim pogledom na Frušku goru", altEn:"Pool with a panoramic view of Fruška Gora" },
+  { src:"images/photo-5.jpg",  size:"wide",   altSr:"Kuća sa bazenom i pogledom na Frušku goru", altEn:"House with the pool and a view of Fruška Gora" },
+  { src:"images/photo-11.jpg", size:"", altSr:"Bazen sa panoramskim pogledom na Frušku goru", altEn:"Pool with a panoramic view of Fruška Gora" },
   { src:"images/photo-2.webp", size:"",       altSr:"Trpezarija sa velikim staklenim vratima", altEn:"Dining area with large glass doors" },
   { src:"images/photo-6.jpg",  size:"",       altSr:"Dnevna soba sa zelenim sofama i TV-om", altEn:"Living room with green sofas and a TV" },
   { src:"images/photo-10.jpg", size:"",       altSr:"Opremljena kuhinja sa otvorenim policama", altEn:"Equipped kitchen with open shelves" },
@@ -510,7 +512,7 @@ const GALLERY = [
   { src:"images/photo-7.jpg",  size:"",       altSr:"Bela spavaća soba sa izlazom na terasu", altEn:"White bedroom with terrace access" },
   { src:"images/photo-9.jpg",  size:"",       altSr:"Manja spavaća soba", altEn:"Smaller bedroom" },
   { src:"images/photo-8.jpg",  size:"",       altSr:"Kupatilo sa tuš kabinom", altEn:"Bathroom with a shower" },
-  { src:"images/photo-1.webp", size:"g-wide", altSr:"Panoramski pogled sa imanja", altEn:"Panoramic view from the property" },
+  { src:"images/photo-1.webp", size:"",       altSr:"Panoramski pogled sa imanja", altEn:"Panoramic view from the property" },
   { src:"images/photo-3.webp", size:"",       altSr:"Kuća iz vazduha okružena zelenilom", altEn:"Aerial view of the house among greenery" },
 ];
 
