@@ -18,16 +18,16 @@
 <meta property="og:locale" content="sr_RS" />
 <meta property="og:locale:alternate" content="en_US" />
 
-<!-- Poppins -->
+<!-- Jost -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
 <style>
   /* ===================== TOKENI / PALETA ===================== */
   :root{
-    --green:#2E7150;
-    --green-dark:#235840;
+    --green:#A3B6A1;
+    --green-dark:#8AA087;
     --ink:#2B2B2B;          /* tamno siva tekst */
     --muted:#6B6B6B;
     --cream:#FAF7F1;        /* bež pozadina */
@@ -46,7 +46,7 @@
   html{scroll-behavior:smooth}
   body{
     margin:0;
-    font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-family:"Jost",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
     color:var(--ink);
     background:var(--cream);
     line-height:1.65;
@@ -63,15 +63,15 @@
   /* ===================== DUGMAD ===================== */
   .btn{
     display:inline-flex;align-items:center;gap:.55em;
-    font-weight:500;font-size:1rem;
-    padding:.95em 1.7em;border-radius:999px;
+    font-weight:600;font-size:.95rem;text-transform:uppercase;letter-spacing:.05em;
+    padding:.95em 1.7em;border-radius:0;
     border:1.5px solid transparent;cursor:pointer;
     -webkit-tap-highlight-color:transparent;
     transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .2s,color .2s,border-color .2s;
     white-space:nowrap;
   }
-  .btn-primary{background:var(--green);color:#fff;box-shadow:0 10px 26px rgba(46,113,80,.32)}
-  .btn-primary:hover,.btn-primary:focus,.btn-primary:focus-visible,.btn-primary:active{background:var(--green-dark);color:#fff;transform:translateY(-2px);box-shadow:none}
+  .btn-primary{background:var(--green);color:var(--ink)}
+  .btn-primary:hover,.btn-primary:focus,.btn-primary:focus-visible,.btn-primary:active{background:var(--green-dark);color:var(--ink);transform:translateY(-2px);box-shadow:none}
   .btn-ghost{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.6);backdrop-filter:blur(6px)}
   .btn-ghost:hover{background:rgba(255,255,255,.24);transform:translateY(-2px)}
   .btn-outline{background:#fff;color:var(--ink);border-color:var(--line)}
@@ -212,13 +212,14 @@
   /* uniformna, luksuzna dugmad - jedna boja (duboko zelena) */
   .cbtn{
     display:inline-flex;align-items:center;gap:.6em;
-    padding:.9em 1.7em;border-radius:999px;font-weight:500;color:#fff;
-    background:linear-gradient(165deg,#2E7150,#1F4A37);
-    border:1px solid rgba(255,255,255,.14);
-    box-shadow:0 10px 26px rgba(31,74,55,.28), inset 0 1px 0 rgba(255,255,255,.14);
-    transition:transform .25s var(--ease),box-shadow .25s var(--ease),background .25s;
+    padding:.9em 1.7em;border-radius:0;font-weight:600;color:var(--ink);
+    text-transform:uppercase;letter-spacing:.05em;
+    background:var(--green);
+    border:0;
+    -webkit-tap-highlight-color:transparent;
+    transition:transform .25s var(--ease),background .25s;
   }
-  .cbtn:hover{transform:translateY(-3px);background:linear-gradient(165deg,#357E5A,#244F3B);box-shadow:none}
+  .cbtn:hover{transform:translateY(-3px);background:var(--green-dark)}
   .cbtn svg{width:20px;height:20px;opacity:.95}
 
   /* ===================== FOOTER ===================== */
